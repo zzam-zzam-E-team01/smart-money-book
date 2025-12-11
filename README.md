@@ -130,7 +130,7 @@ jwbook/jwbook/src/main/webapp/WEB-INF/views/
 
 - **개발자**: 김민석
 - **프로젝트**: Spring Boot 기반 가계부 프로젝트
-- **변환일**: 2024년 12월
+- **변환일**: 2025년 12월 11일
 
 ## 📄 라이선스
 
