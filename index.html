@@ -6,142 +6,98 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/daily.css">
 	<!-- Dev Navigation -->
 	<link rel="stylesheet" href="assets/css/dev-nav.css">
-	<title>가계부 프로젝트</title>
-	<style>
-		body {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			min-height: 100vh;
-		}
-		.main-card {
-			background: white;
-			border-radius: 25px;
-			box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-			padding: 50px;
-		}
-		.feature-card {
-			background: #f8f9fa;
-			border-radius: 15px;
-			padding: 25px;
-			text-align: center;
-			transition: transform 0.3s, box-shadow 0.3s;
-		}
-		.feature-card:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-		}
-		.feature-icon {
-			font-size: 3rem;
-			margin-bottom: 15px;
-		}
-		.btn-main {
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			border: none;
-			padding: 18px 50px;
-			font-size: 1.3rem;
-			border-radius: 35px;
-			transition: transform 0.3s, box-shadow 0.3s;
-		}
-		.btn-main:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
-		}
-		.tech-badge {
-			background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-			color: white;
-			padding: 5px 15px;
-			border-radius: 20px;
-			font-size: 0.85rem;
-			margin: 3px;
-			display: inline-block;
-		}
-	</style>
+	<title>가계부</title>
 </head>
 <body>
-	<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-		<div class="main-card text-center" style="max-width: 800px;">
-			<!-- 헤더 -->
-			<div class="mb-4">
-				<span style="font-size: 4rem;">💰</span>
-				<h1 class="mt-3 mb-2">스마트 가계부</h1>
-				<p class="text-muted">Spring Boot 기반 개인 재정 관리 시스템</p>
-			</div>
-			
-			<hr class="my-4">
-			
-			<!-- 기능 소개 -->
-			<div class="row mb-4">
-				<div class="col-md-4 mb-3">
-					<div class="feature-card">
-						<div class="feature-icon">📝</div>
-						<h5>수입/지출 관리</h5>
-						<p class="text-muted small mb-0">간편한 내역 등록 및 관리</p>
-					</div>
+	<div class="daily-container">
+		<!-- 헤더 -->
+		<div class="daily-header">
+			<div class="daily-header-top">
+				<div class="daily-header-left">
+					<h1 class="daily-header-title">💰 가계부</h1>
+					<span id="dailyMonthText" class="daily-month-text">2024년 12월</span>
 				</div>
-				<div class="col-md-4 mb-3">
-					<div class="feature-card">
-						<div class="feature-icon">📊</div>
-						<h5>통계 분석</h5>
-						<p class="text-muted small mb-0">카테고리별 지출 차트</p>
-					</div>
-				</div>
-				<div class="col-md-4 mb-3">
-					<div class="feature-card">
-						<div class="feature-icon">📈</div>
-						<h5>월별 추이</h5>
-						<p class="text-muted small mb-0">수입/지출 추이 그래프</p>
-					</div>
+				<div class="daily-header-actions">
+					<span id="userInfo" class="user-info-text" style="margin-right: 10px; color: #000; font-weight: 600;"></span>
+					<button class="daily-action-btn" title="검색">
+						<i class="bi bi-search"></i>
+					</button>
+					<button class="daily-action-btn" title="필터">
+						<i class="bi bi-funnel"></i>
+					</button>
+					<button class="daily-action-btn" title="로그아웃" onclick="logout()" style="color: #dc3545;">
+						<i class="bi bi-box-arrow-right"></i>
+					</button>
 				</div>
 			</div>
-			
-			<!-- 기술 스택 -->
-			<div class="mb-4">
-				<p class="mb-2"><strong>기술 스택</strong></p>
-				<span class="tech-badge">Java 21</span>
-				<span class="tech-badge">Spring Boot 3.5</span>
-				<span class="tech-badge">MySQL</span>
-				<span class="tech-badge">JSP</span>
-				<span class="tech-badge">Chart.js</span>
-				<span class="tech-badge">Bootstrap 5</span>
-			</div>
-			
-			<!-- 메인 버튼 -->
-			<a href="account/list.html" class="btn btn-main btn-primary btn-lg">
-				<i class="bi bi-wallet2"></i> 가계부 시작하기
-			</a>
-			
-			<hr class="mt-4 mb-3">
-			
-			<!-- 푸터 -->
-			<div class="text-muted">
-				<small>
-					<i class="bi bi-person"></i> 개발자: 김민석<br>
-					<i class="bi bi-clock"></i> <span id="currentTime"></span>
-				</small>
+			<div class="daily-month-selector">
+				<button id="dailyMonthPrev" class="daily-month-nav" type="button">
+					<i class="bi bi-chevron-left"></i>
+				</button>
+				<div class="daily-month-indicator"></div>
+				<button id="dailyMonthNext" class="daily-month-nav" type="button">
+					<i class="bi bi-chevron-right"></i>
+				</button>
 			</div>
 		</div>
+
+		<!-- 탭 네비게이션 -->
+		<div class="daily-tabs">
+			<button class="daily-tab active" onclick="window.location.href='index.html'">일일</button>
+			<button class="daily-tab" onclick="window.location.href='calendar.html'">달력</button>
+			<button class="daily-tab" onclick="window.location.href='account/stats.html'">통계</button>
+		</div>
+
+		<!-- 요약 바 -->
+		<div class="daily-summary">
+			<div class="daily-summary-item">
+				<div class="daily-summary-label">수입</div>
+				<div id="dailySummaryIncome" class="daily-summary-value income">0</div>
+			</div>
+			<div class="daily-summary-item">
+				<div class="daily-summary-label">지출</div>
+				<div id="dailySummaryExpense" class="daily-summary-value expense">0</div>
+			</div>
+			<div class="daily-summary-item">
+				<div class="daily-summary-label">합계</div>
+				<div id="dailySummaryTotal" class="daily-summary-value total">0</div>
+			</div>
+		</div>
+
+		<!-- 거래 리스트 -->
+		<div id="dailyTransactions" class="daily-transactions">
+			<!-- JavaScript로 동적 생성 -->
+		</div>
 	</div>
+
+	<!-- 플로팅 액션 버튼 -->
+	<button id="dailyFab" class="daily-fab" type="button" title="내역 추가">
+		<i class="bi bi-plus-lg"></i>
+	</button>
 	
-	<script>
-		// 현재 시간 표시
-		function updateTime() {
-			const now = new Date();
-			const timeString = now.toLocaleString('ko-KR', {
-				year: 'numeric',
-				month: '2-digit',
-				day: '2-digit',
-				hour: '2-digit',
-				minute: '2-digit',
-				second: '2-digit'
-			});
-			document.getElementById('currentTime').textContent = timeString;
-		}
-		updateTime();
-		setInterval(updateTime, 1000);
-	</script>
+	<!-- Custom JavaScript -->
+	<script src="assets/js/auth.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/daily.js"></script>
 	<!-- Dev Navigation -->
 	<script src="assets/js/dev-nav.js"></script>
+	<script>
+		// 사용자 정보 표시 (로그인 체크는 main.js에서 처리)
+		document.addEventListener('DOMContentLoaded', function() {
+			const user = UserStorage.getCurrentUser();
+			if (user) {
+				const userInfoEl = document.getElementById('userInfo');
+				if (userInfoEl) {
+					userInfoEl.textContent = `${user.name}님`;
+				}
+			}
+		});
+	</script>
 </body>
 </html>
 
