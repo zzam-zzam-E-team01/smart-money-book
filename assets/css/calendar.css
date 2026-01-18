@@ -1,0 +1,496 @@
+/* 
+ * calendar.css
+ * 달력 화면 스타일 - 아이폰 스타일
+ */
+
+.calendar-container {
+	background: white;
+	border-radius: 12px;
+	padding: 20px;
+	margin-bottom: 30px;
+	border: 1px solid #e5e5e7;
+}
+
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e5e5e7;
+}
+
+.calendar-nav-btn {
+	background: transparent;
+	border: none;
+	color: #007aff;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	font-size: 1.1rem;
+}
+
+.calendar-nav-btn:hover {
+	background-color: #f5f5f7;
+}
+
+.calendar-nav-btn:active {
+	background-color: #e5e5e7;
+}
+
+.calendar-title {
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #1d1d1f;
+	margin: 0;
+	letter-spacing: -0.3px;
+}
+
+.calendar-weekdays {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	margin-bottom: 8px;
+}
+
+.calendar-weekday {
+	text-align: center;
+	font-weight: 500;
+	color: #86868b;
+	padding: 8px 4px;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.calendar-weekday.weekend {
+	color: #ff3b30; /* 일요일 기본 */
+}
+
+.calendar-weekdays .calendar-weekday:last-child {
+	color: #007aff; /* 토요일 */
+}
+
+.calendar-days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px;
+}
+
+.calendar-day {
+	aspect-ratio: 1;
+	background: transparent;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 4px;
+	cursor: pointer;
+	transition: background-color 0.15s;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 80px;
+}
+
+.calendar-day:hover {
+	background-color: #f5f5f7;
+}
+
+.calendar-day.other-month {
+	opacity: 0.25;
+}
+
+.calendar-day.today .calendar-day-number {
+	background-color: #007aff;
+	color: white;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.calendar-day.selected {
+	background-color: #e3f2fd;
+}
+
+.calendar-day.selected .calendar-day-number {
+	color: #007aff;
+	font-weight: 600;
+}
+
+.calendar-day-number {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #1d1d1f;
+	margin-bottom: 4px;
+	line-height: 1;
+}
+
+.calendar-day-events {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin-top: auto;
+	font-size: 0.85rem;
+}
+
+.calendar-day-amount {
+	text-align: center;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.calendar-day-amount.income {
+	color: #007aff;
+}
+
+.calendar-day-amount.expense {
+	color: #ff3b30;
+}
+
+.calendar-day-amount.mixed-income {
+	color: #007aff;
+}
+
+.calendar-day-amount.mixed-expense {
+	color: #ff3b30;
+}
+
+/* 헤더 요약 */
+.calendar-summary-header {
+	background: white;
+	padding: 15px;
+	border-radius: 8px;
+	border: 1px solid #e5e5e7;
+}
+
+.calendar-title-text {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #1d1d1f;
+}
+
+.calendar-nav-btn-sm {
+	background: transparent;
+	border: none;
+	color: #007aff;
+	width: 28px;
+	height: 28px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	font-size: 0.9rem;
+	margin-left: 5px;
+}
+
+.calendar-nav-btn-sm:hover {
+	background-color: #f5f5f7;
+}
+
+.calendar-summary-amounts {
+	display: flex;
+	gap: 20px;
+	margin-top: 10px;
+}
+
+.calendar-summary-income {
+	color: #007aff;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.calendar-summary-expense {
+	color: #ff3b30;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+/* 선택된 날짜 상세 내역 */
+.selected-date-details {
+	background: white;
+	border-radius: 12px;
+	padding: 0;
+	margin-top: 20px;
+	border: 1px solid #e5e5e7;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.selected-date-header {
+	padding: 15px 20px;
+	border-bottom: 1px solid #e5e5e7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f8f9fa;
+	border-radius: 12px 12px 0 0;
+}
+
+.selected-date-header span {
+	font-weight: 600;
+	font-size: 1rem;
+	color: #1d1d1f;
+}
+
+.close-details-btn {
+	background: transparent;
+	border: none;
+	color: #86868b;
+	font-size: 1.2rem;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 4px;
+	transition: all 0.2s;
+}
+
+.close-details-btn:hover {
+	background: #e5e5e7;
+	color: #1d1d1f;
+}
+
+.selected-date-list {
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.selected-date-item {
+	padding: 15px 20px;
+	border-bottom: 1px solid #f5f5f7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.selected-date-item:hover {
+	background-color: #fafafa;
+}
+
+.selected-date-item:last-child {
+	border-bottom: none;
+}
+
+.selected-date-item-info {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.selected-date-item-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+}
+
+.selected-date-item-icon.income {
+	background: #e3f2fd;
+	color: #007aff;
+}
+
+.selected-date-item-icon.expense {
+	background: #ffebee;
+	color: #ff3b30;
+}
+
+.selected-date-item-details {
+	flex: 1;
+}
+
+.selected-date-item-category {
+	font-weight: 600;
+	color: #1d1d1f;
+	margin-bottom: 3px;
+	font-size: 0.95rem;
+}
+
+.selected-date-item-amount {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.selected-date-item-amount.income {
+	color: #007aff;
+}
+
+.selected-date-item-amount.expense {
+	color: #ff3b30;
+}
+
+.day-details-list {
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.day-detail-item {
+	padding: 15px;
+	border-bottom: 1px solid #e9ecef;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: background 0.2s;
+}
+
+.day-detail-item:hover {
+	background: #f8f9fa;
+}
+
+.day-detail-item:last-child {
+	border-bottom: none;
+}
+
+.day-detail-info {
+	flex: 1;
+}
+
+.day-detail-category {
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.day-detail-desc {
+	font-size: 0.9rem;
+	color: #6c757d;
+	margin-bottom: 3px;
+}
+
+.day-detail-date {
+	font-size: 0.8rem;
+	color: #adb5bd;
+}
+
+.day-detail-amount {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.day-detail-amount.income {
+	color: #34c759;
+}
+
+.day-detail-amount.expense {
+	color: #ff3b30;
+}
+
+.day-details-summary {
+	background: #f8f9fa;
+	padding: 15px;
+	border-radius: 10px;
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.day-summary-item {
+	text-align: center;
+}
+
+.day-summary-label {
+	font-size: 0.85rem;
+	color: #6c757d;
+	margin-bottom: 5px;
+}
+
+.day-summary-value {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.day-summary-value.income {
+	color: #34c759;
+}
+
+.day-summary-value.expense {
+	color: #ff3b30;
+}
+
+/* 플로팅 액션 버튼 */
+.calendar-fab {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 56px;
+	height: 56px;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border: none;
+	border-radius: 50%;
+	color: white;
+	font-size: 1.5rem;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+	transition: all 0.3s;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.calendar-fab:hover {
+	transform: scale(1.1) rotate(90deg);
+	box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+.calendar-fab:active {
+	transform: scale(0.95);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+	.calendar-container {
+		padding: 15px;
+		border-radius: 8px;
+	}
+	
+	.calendar-header {
+		margin-bottom: 15px;
+		padding-bottom: 12px;
+	}
+	
+	.calendar-title {
+		font-size: 1.1rem;
+	}
+	
+	.calendar-day {
+		min-height: 60px;
+		padding: 6px 2px;
+	}
+	
+	.calendar-day-number {
+		font-size: 0.9rem;
+	}
+	
+	.calendar-day.today .calendar-day-number {
+		width: 28px;
+		height: 28px;
+		font-size: 0.85rem;
+	}
+	
+	.calendar-event-dot {
+		width: 5px;
+		height: 5px;
+	}
+	
+	.calendar-weekday {
+		font-size: 0.75rem;
+		padding: 6px 2px;
+	}
+}
+
