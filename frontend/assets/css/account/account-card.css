@@ -1,0 +1,57 @@
+﻿/*
+ * account-card.css
+ * list.html怨?stats.html?먯꽌 怨듭쑀?섎뒗 ?붿빟 移대뱶 ?ㅽ??? */
+
+/* ?붿빟 移대뱶 怨듯넻 ?ㅽ???*/
+.summary-card {
+	border-radius: 15px;
+	padding: 20px;
+	color: white;
+	text-align: center;
+}
+
+.summary-card h3 {
+	font-size: 1.8rem;
+	margin-bottom: 5px;
+}
+
+.summary-card p {
+	margin: 0;
+	opacity: 0.9;
+}
+
+/* ?섏엯 移대뱶 */
+.income-card {
+	background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* 吏異?移대뱶 */
+.expense-card {
+	background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+/* ?붿븸 移대뱶 */
+.balance-card {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ???ㅽ???(list.html?? */
+.income-row {
+	background-color: rgba(17, 153, 142, 0.1);
+}
+
+.expense-row {
+	background-color: rgba(235, 51, 73, 0.1);
+}
+
+/* 湲덉븸 ?띿뒪???됱긽 */
+.amount-income {
+	color: #11998e;
+	font-weight: bold;
+}
+
+.amount-expense {
+	color: #eb3349;
+	font-weight: bold;
+}
+

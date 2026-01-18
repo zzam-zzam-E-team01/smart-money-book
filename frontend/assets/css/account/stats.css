@@ -1,0 +1,33 @@
+﻿/*
+ * stats.css
+ * stats.html ?섏씠吏 ?꾩슜 ?ㅽ??? */
+
+/* 李⑦듃 而⑦뀒?대꼫 */
+.chart-container {
+	position: relative;
+	height: 300px;
+}
+
+/* 移댄뀒怨좊━ ?꾩씠??*/
+.category-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.category-item:last-child {
+	border-bottom: none;
+}
+
+/* ?꾨줈洹몃젅??諛?*/
+.progress {
+	height: 25px;
+	border-radius: 10px;
+}
+
+/* main-card ?щ갚 議곗젙 */
+.main-card {
+	margin-bottom: 20px;
+}
+
