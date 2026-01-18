@@ -1,0 +1,41 @@
+﻿/*
+ * account-form.css
+ * form.html怨?edit.html?먯꽌 怨듭쑀?섎뒗 ???ㅽ??? */
+
+/* ??移대뱶 ?щ갚 議곗젙 */
+.main-card {
+	padding: 40px;
+}
+
+/* ?섏엯/吏異??좏깮 踰꾪듉 */
+.type-btn {
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 1.1rem;
+	transition: all 0.3s;
+}
+
+.type-btn.income.active {
+	background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+	border-color: #11998e;
+	color: white;
+}
+
+.type-btn.expense.active {
+	background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+	border-color: #eb3349;
+	color: white;
+}
+
+/* 移댄뀒怨좊━ ?좏깮 踰꾪듉 */
+.category-btn {
+	margin: 5px;
+	border-radius: 20px;
+}
+
+.category-btn.active {
+	background-color: #667eea;
+	border-color: #667eea;
+	color: white;
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/account/account-form.css">
+	<!-- Dev Navigation -->
+	<link rel="stylesheet" href="../../assets/css/dev-nav.css">
+	<title>내역 수정</title>
+</head>
+<body>
+	<div class="container mt-5 mb-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="main-card">
+					<h3 class="mb-4"><i class="bi bi-pencil-square"></i> 내역 수정</h3>
+					<hr>
+					
+					<form id="accountForm">
+						<input type="hidden" name="id" value="1">
+						
+						<!-- 수입/지출 선택 -->
+						<div class="mb-4">
+							<label class="form-label"><strong>구분</strong></label>
+							<div class="d-flex gap-3">
+								<button type="button" class="btn btn-outline-success type-btn income" onclick="selectType('income')">
+									<i class="bi bi-arrow-down-circle"></i> 수입
+								</button>
+								<button type="button" class="btn btn-outline-danger type-btn expense active" onclick="selectType('expense')">
+									<i class="bi bi-arrow-up-circle"></i> 지출
+								</button>
+							</div>
+							<input type="hidden" name="type" id="type" value="expense" required>
+						</div>
+						
+						<!-- 카테고리 선택 -->
+						<div class="mb-4">
+							<label class="form-label"><strong>카테고리</strong></label>
+							<div id="incomeCategories" style="display: none;"></div>
+							<div id="expenseCategories"></div>
+							<input type="hidden" name="category" id="category" value="식비" required>
+						</div>
+						
+						<!-- 금액 -->
+						<div class="mb-4">
+							<label class="form-label"><strong>금액</strong></label>
+							<div class="input-group">
+								<input type="number" name="amount" class="form-control form-control-lg" value="45000" required min="1">
+								<span class="input-group-text">원</span>
+							</div>
+						</div>
+						
+						<!-- 날짜 -->
+						<div class="mb-4">
+							<label class="form-label"><strong>날짜</strong></label>
+							<input type="date" name="accountDate" class="form-control form-control-lg" value="2024-12-05" required>
+						</div>
+						
+						<!-- 설명 -->
+						<div class="mb-4">
+							<label class="form-label"><strong>설명 (선택)</strong></label>
+							<input type="text" name="description" class="form-control" value="마트 장보기" placeholder="내용을 입력하세요">
+						</div>
+						
+						<hr>
+						<div class="d-flex justify-content-between">
+							<a href="list.html" class="btn btn-secondary btn-lg">
+								<i class="bi bi-arrow-left"></i> 취소
+							</a>
+							<button type="submit" class="btn btn-primary btn-lg">
+								<i class="bi bi-check-lg"></i> 수정
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Custom JavaScript -->
+	<script src="../../assets/js/auth.js"></script>
+	<script src="../../assets/js/main.js"></script>
+	<script src="../../assets/js/account/account-form.js"></script>
+	<script src="../../assets/js/account/edit.js"></script>
+	<!-- Dev Navigation -->
+	<script src="../../assets/js/dev-nav.js"></script>
+</body>
+</html>
+
+

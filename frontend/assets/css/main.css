@@ -1,0 +1,17 @@
+﻿/* 
+ * main.css
+ * 紐⑤뱺 ?섏씠吏?먯꽌 怨듯넻?쇰줈 ?ъ슜?섎뒗 ?ㅽ??? */
+
+/* 湲곕낯 ?덉씠?꾩썐 */
+body {
+	background: #f8f9fa;
+}
+
+/* 硫붿씤 移대뱶 而댄룷?뚰듃 */
+.main-card {
+	background: white;
+	border-radius: 20px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+	padding: 30px;
+}
+
